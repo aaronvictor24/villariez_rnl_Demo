@@ -29,5 +29,12 @@ const GenderService = {
         throw error;
       });
   },
+  destroyGender: async (genderId: number) => {
+    return AxiosInstance.put(`/destroyGender/${genderId}`)
+      .then((response) => response)
+      .catch((error) => {
+        throw error;
+      });
+  },
 };
 export default GenderService;
