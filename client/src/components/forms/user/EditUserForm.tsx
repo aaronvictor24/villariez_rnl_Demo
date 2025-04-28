@@ -79,6 +79,10 @@ const EditUserForm = ({
     UserService.updateUser(state.user_id, state)
       .then((res) => {
         if (res.status === 200) {
+          setState((prevState) => ({
+            ...prevState,
+            errors: {} as UserFieldErrors,
+          }));
           onUserUpdated(res.data.message);
         } else {
           console.error(
